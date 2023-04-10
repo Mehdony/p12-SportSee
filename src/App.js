@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar.jsx";
 import SideBar from "./components/SideBar/SideBar.jsx";
 
 function App() {
+   
   return (
     <BrowserRouter>
       <NavBar />
