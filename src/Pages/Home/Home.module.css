@@ -1,0 +1,35 @@
+.container {
+  padding: 68px 100px;
+}
+.title,
+.subtitle {
+  margin: 0;
+}
+
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 77px;
+}
+
+.span  {
+    color: #FF0101;
+}
+
+.allCharts {
+  width: 100vmin;
+  max-width: 835px;
+  min-width: 500px;
+}
