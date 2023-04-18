@@ -3,6 +3,7 @@ import { store } from '../../config'
 import { useParams } from 'react-router-dom';
 import styles from './Home.module.css'
 import BarChartComp from '../../components/BarChart/BarChart';
+import AverageSession from '../../components/AverageSession/AverageSession';
 
 const Home = () => {
 
@@ -61,7 +62,9 @@ const Home = () => {
 
       <section className={styles.allCharts}>
       {userActivity.length > 0 && <BarChartComp datas={userActivity} />}
-
+      <div className={styles.chartsContainer}>
+      {average !== undefined && <AverageSession average={average} />}
+      </div>
       </section>
        <section className={styles.nutrients}>
 
