@@ -4,7 +4,7 @@ import {
   CartesianGrid,
   XAxis,
   Tooltip,
-  Legend,
+  // Legend,
   Rectangle,
 } from "recharts";
 import styles from "./AverageSession.module.css";
