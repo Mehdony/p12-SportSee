@@ -1,0 +1,11 @@
+.chartContainer {
+    display: flex;
+    align-items: center;
+    background-color:#282D30;
+    border-radius: 5px;
+    /* roboto 500 */
+    font-family: 'Roboto';
+    font-weight: 500;
+    width: 258px;
+    justify-content: center;
+}

@@ -36,3 +36,9 @@
   flex-direction: column;
   row-gap: 30px;
 }
+
+.chartsContainer {
+display: flex;
+column-gap: 30px;
+
+}

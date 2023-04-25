@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import styles from './Home.module.css'
 import BarChartComp from '../../components/BarChart/BarChart';
 import AverageSession from '../../components/AverageSession/AverageSession';
+import RadarComp from '../../components/RadarChart/RadarChart';
 
 const Home = () => {
 
@@ -46,7 +47,7 @@ const Home = () => {
       setWait(false)
     }
   }
-
+console.log(userPerformance)
   if(wait){
     return <div>loading...</div>
   }
@@ -64,6 +65,7 @@ const Home = () => {
       {userActivity.length > 0 && <BarChartComp datas={userActivity} />}
       <div className={styles.chartsContainer}>
       {average !== undefined && <AverageSession average={average} />}
+      {userPerformance.length > 0 && <RadarComp datas={userPerformance} />}
       </div>
       </section>
        <section className={styles.nutrients}>
