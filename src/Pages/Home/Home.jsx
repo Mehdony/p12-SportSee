@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useTransition } from "react";
+import React, { useEffect, useState } from "react";
 import { store } from "../../config";
 import { useParams } from "react-router-dom";
-// import uuid from "react-uuid";
 import styles from "./Home.module.css";
 import BarChartComp from "../../components/BarChart/BarChart";
 import AverageSession from "../../components/AverageSession/AverageSession";
@@ -68,7 +67,7 @@ const Home = () => {
           <div className={styles.chartsContainer}>
             {average !== undefined && <AverageSession average={average} />}
             {userPerformance.length > 0 && (
-              <RadarComp datas={userPerformance} />
+              <RadarComp datas={userPerformance} kind={kind}/>
             )}
             {userScore !== undefined && <PieComp score={userScore} />}
           </div>
