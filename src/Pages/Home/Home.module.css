@@ -1,5 +1,6 @@
 .container {
   padding: 68px 100px;
+
 }
 .title,
 .subtitle {
@@ -41,4 +42,16 @@
 display: flex;
 column-gap: 30px;
 
+}
+.chartsContainerGroup{
+  display: flex;
+  column-gap: 30px;
+}
+
+.nutrients {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 40px;
+  height: 623px;
 }
