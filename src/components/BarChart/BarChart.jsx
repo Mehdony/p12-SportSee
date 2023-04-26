@@ -27,11 +27,14 @@ export function BarChartComp(props) {
     return null
   }
 
+  // if widrh is less than 1300px mywidth == 100% otherwise 853px
+  const myWidth = window.innerWidth < 1300 ? '99%' : 853
+
   const renderBarChart = (
     <div className={styles.chartContainer}>
       <div>Activité quotidienne</div>
       <ResponsiveContainer width={'99%'} height={250}>
-        <BarChart width={853} height={320} data={props.datas}>
+        <BarChart width={myWidth} height={320} data={props.datas}>
           <CartesianGrid
             strokeDasharray="3 3"
             vertical={false}

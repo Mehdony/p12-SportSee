@@ -1,5 +1,6 @@
 .container {
   padding: 40px 0;
+  width: 100%;
 
 }
 .title,
@@ -46,6 +47,7 @@ column-gap: 30px;
 .chartsContainerGroup{
   display: flex;
   column-gap: 30px;
+
 }
 
 .nutrients {
@@ -54,4 +56,23 @@ column-gap: 30px;
   justify-content: space-between;
   row-gap: 40px;
   height: 623px;
+}
+
+
+
+@media screen and (max-width: 1300px) {
+  .container {
+    overflow-y: scroll;
+  }
+  .chartsContainerGroup {
+    flex-direction: column;
+  }
+  .nutrients {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  column-gap: 70px;
+  /* max-width: 70%; */
+    height: 100%;
+  }
 }

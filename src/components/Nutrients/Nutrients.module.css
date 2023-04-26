@@ -54,13 +54,17 @@
     margin: 0;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1300px) {
     .nutrientContainer {
-        width: 200px;
+        width: fit-content;
+        background-color: #fff;
         height: 124px;
+        margin-bottom: 50px;
         background-color: transparent;
-
+        padding-left: 0px;
     }
+
+    
 
 
 }
