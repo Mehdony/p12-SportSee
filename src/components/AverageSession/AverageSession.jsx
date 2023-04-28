@@ -42,6 +42,7 @@ const AverageSession = (props) => {
 
   const renderLineChart = (
     <div className={styles.chartContainer}>
+      <p className={styles.averageTitle}>Dwwwwwwwwwwwwwwwwwwwwwwurée moyenne des sessions</p>
       <LineChart
         width={258}
         height={263}

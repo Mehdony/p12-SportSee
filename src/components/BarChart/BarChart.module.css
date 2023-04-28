@@ -12,6 +12,10 @@
   flex-direction: column;
 }
 
+.barTitle {
+  font-weight: 600;
+}
+
 .activityTooltip {
   background-color: #ff0000;
   padding: 10px;

@@ -32,7 +32,7 @@ export function BarChartComp(props) {
 
   const renderBarChart = (
     <div className={styles.chartContainer}>
-      <div>Activité quotidienne</div>
+      <div className={styles.barTitle}>Activité quotidienne</div>
       <ResponsiveContainer width={'99%'} height={250}>
         <BarChart width={myWidth} height={320} data={props.datas}>
           <CartesianGrid

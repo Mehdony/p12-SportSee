@@ -7,6 +7,7 @@ import AverageSession from "../../components/AverageSession/AverageSession";
 import RadarComp from "../../components/RadarChart/RadarChart";
 import PieComp from "../../components/PieComp/PieComp";
 import Nutrients from "../../components/Nutrients/Nutrients";
+import Error from "../../components/Error/Error";
 
 const Home = () => {
   const { id } = useParams();
@@ -55,30 +56,41 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>
-        Bienvenue <span className={styles.span}>{userInfos.firstName}</span>{" "}
-      </h1>
-      <h3 className={styles.subtitle}>
-        Félicitation ! Vous avez explosé vos objectifs hier 👏
-      </h3>
-      <section className={styles.chartsContainerGroup}>
-        <section className={styles.allCharts}>
-          {userActivity.length > 0 && <BarChartComp datas={userActivity} />}
-          <div className={styles.chartsContainer}>
-            {average !== undefined && <AverageSession average={average} />}
-            {userPerformance.length > 0 && (
-              <RadarComp datas={userPerformance} kind={kind}/>
-            )}
-            {userScore !== undefined && <PieComp score={userScore} />}
-          </div>
-        </section>
-        <section className={styles.nutrients}>
-          {userDatas &&
-            Object.entries(userDatas).map(([key, value], index) => (
-              <Nutrients key={index} name={key} value={value} index={index} />
-            ))}
-        </section>
-      </section>
+      {userActivity.length > 0 ? (
+        <>
+          <h1 className={styles.title}>
+            Bienvenue <span className={styles.span}>{userInfos.firstName}</span>{" "}
+          </h1>
+          <h3 className={styles.subtitle}>
+            Félicitation ! Vous avez explosé vos objectifs hier 👏
+          </h3>
+          <section className={styles.chartsContainerGroup}>
+            <section className={styles.allCharts}>
+              {userActivity.length > 0 && <BarChartComp datas={userActivity} />}
+              <div className={styles.chartsContainer}>
+                {average !== undefined && <AverageSession average={average} />}
+                {userPerformance.length > 0 && (
+                  <RadarComp datas={userPerformance} kind={kind} />
+                )}
+                {userScore !== undefined && <PieComp score={userScore} />}
+              </div>
+            </section>
+            <section className={styles.nutrients}>
+              {userDatas &&
+                Object.entries(userDatas).map(([key, value], index) => (
+                  <Nutrients
+                    key={index}
+                    name={key}
+                    value={value}
+                    index={index}
+                  />
+                ))}
+            </section>
+          </section>
+        </>
+      ) : (
+        <Error />
+      )}
     </div>
   );
 };

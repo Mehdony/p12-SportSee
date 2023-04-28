@@ -1,3 +1,7 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,4 +11,3 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
-
