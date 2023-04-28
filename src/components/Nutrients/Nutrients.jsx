@@ -1,5 +1,17 @@
 import React from "react";
 import styles from "./Nutrients.module.css";
+import PropTypes from 'prop-types';
+
+/**
+A component for displaying nutrient information.
+@param {Object} props - The props object.
+@param {string} props.name - The name of the nutrient.
+@param {Object} props.value - The nutrient value object.
+@param {number} props.value.count - The nutrient count value.
+@param {string} props.value.unit - The unit of the nutrient count value.
+@param {string} props.value.nutType - The type of nutrient.
+@returns {JSX.Element} - A React component that displays nutrient information.
+*/
 
 function Nutrients(props) {
   console.log(props);
@@ -18,5 +30,16 @@ function Nutrients(props) {
     </div>
   )
 }
+
+Nutrients.propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.shape({
+    count: PropTypes.number.isRequired,
+    unit: PropTypes.string.isRequired,
+    nutType: PropTypes.string.isRequired,
+    styling: PropTypes.string,
+  }).isRequired,
+};
+
 
 export default Nutrients;

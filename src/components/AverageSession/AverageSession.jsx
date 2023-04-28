@@ -8,6 +8,15 @@ import {
   Rectangle,
 } from "recharts";
 import styles from "./AverageSession.module.css";
+import PropTypes from 'prop-types';
+
+/**
+
+Composant qui affiche un graphique en ligne avec la durée moyenne des sessions.
+@param {Object} props - Les propriétés du composant.
+@param {Array} props.average - Tableau d'objets contenant les données du graphique.
+@returns {JSX.Element} - Le composant graphique en ligne.
+*/
 
 const AverageSession = (props) => {
   const CustomDot = (props) => {
@@ -42,7 +51,7 @@ const AverageSession = (props) => {
 
   const renderLineChart = (
     <div className={styles.chartContainer}>
-      <p className={styles.averageTitle}>Dwwwwwwwwwwwwwwwwwwwwwwurée moyenne des sessions</p>
+      <p className={styles.averageTitle}>Durée moyenne des sessions</p>
       <LineChart
         width={258}
         height={263}
@@ -100,5 +109,13 @@ const AverageSession = (props) => {
   );
   return <div>{renderLineChart}</div>;
 };
+
+AverageSession.propTypes = {
+  average: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+  })).isRequired,
+};
+
 
 export default AverageSession;

@@ -12,6 +12,8 @@ function Login() {
   const handleChange = (e) => {
     setId(e.target.value);
   };
+
+
   // permet de naviguer vers la page Home avec l'id de l'utilisateur
   const handleSubmit = (e) => {
     e.preventDefault();

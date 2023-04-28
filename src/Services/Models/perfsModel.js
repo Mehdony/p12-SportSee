@@ -1,3 +1,9 @@
+/**
+ * Represents a data model for the chart of perfomance model.
+ * @constructor
+ * @param {Object} data - The data to be mapped for the chart.
+ */
+
 export default class PerfsModel {
   constructor(data) {
     this.mappedData = data.data

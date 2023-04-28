@@ -1,3 +1,9 @@
+/**
+ * Represents a data model for the chart of an average of sessions.
+ * @constructor
+ * @param {Object} data - The data to be mapped for the chart.
+ */
+
 export default class AverageModel {
     constructor(data) {
       this.days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']

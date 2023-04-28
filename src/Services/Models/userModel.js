@@ -1,3 +1,13 @@
+/**
+ * Creates a new instance of UserDataModel.
+ * @constructor
+ * @param {Object} data - The data object.
+ * @param {string} data.id - The user ID.
+ * @param {Object} data.userInfos - The user informations.
+ * @param {number} data.score|data.todayScore - The user score.
+ * @param {Object} data.keyData - The user key data.
+ */
+
 export default class UserDataModel {
   constructor(data) {
     this.userId = data.id;

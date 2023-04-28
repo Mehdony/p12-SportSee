@@ -26,6 +26,14 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+/**
+
+Fetches user data from store using Promises and displays it on the home page.
+@async
+@function
+@returns {JSX.Element} - The rendered home page with user data or an error message if no data is found.
+*/
+
   const promiseAll = async () => {
     setWait(true);
     try {

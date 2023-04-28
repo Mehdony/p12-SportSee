@@ -10,6 +10,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import styles from "./BarChart.module.css";
+import PropTypes from 'prop-types';
+
+/**
+ * Composant BarChart pour afficher un graphique en barres avec données de poids et calories brûlées.
+ * @param {Object} props - Les propriétés du composant.
+ * @param {Array} props.datas - Les données à afficher sur le graphique.
+ * @returns {JSX.Element} - Le composant BarChart.
+ */
 
 export function BarChartComp(props) {
   
@@ -99,5 +107,14 @@ export function BarChartComp(props) {
 
   return <div>{renderBarChart}</div>
 }
+
+BarChartComp.propTypes = {
+  datas: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    kilogrammes: PropTypes.number.isRequired,
+    calories: PropTypes.number.isRequired,
+  })).isRequired,
+};
+
 
 export default BarChartComp

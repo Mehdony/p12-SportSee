@@ -1,6 +1,15 @@
 import React from "react";
 import { Pie, PieChart, Legend, ResponsiveContainer } from "recharts";
 import styles from "./PieComp.module.css";
+import PropTypes from "prop-types";
+
+/**
+A PieChart component that displays a score as a percentage.
+@param {Object} props - Component props.
+@param {number} props.score - The score to display as a percentage.
+@returns {JSX.Element} - The PieChart component.
+*/
+
 
 function PieComp(props) {
   const data = [
@@ -92,5 +101,9 @@ function PieComp(props) {
     </div>
   );
 }
+
+PieComp.propTypes = {
+  score: PropTypes.number.isRequired,
+  };
 
 export default PieComp;

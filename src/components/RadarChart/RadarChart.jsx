@@ -6,6 +6,14 @@ import {
   //   ResponsiveContainer,
 } from "recharts";
 import styles from "./RadarChart.module.css";
+import PropTypes from 'prop-types';
+
+/**
+A Radar Chart component that displays the data passed in through props.
+@param {object} props - The props object containing the data to display.
+@param {array} props.datas - An array of objects representing the data to display on the chart.
+@returns {JSX.Element} - A JSX element containing the Radar Chart component.
+*/
 
 const RadarComp = (props) => {
   console.log("radar", props.datas);
@@ -25,5 +33,14 @@ const RadarComp = (props) => {
         </div>
   );
 };
+
+RadarComp.propTypes = {
+  datas: PropTypes.arrayOf(
+  PropTypes.shape({
+  key: PropTypes.number.isRequired,
+  subject: PropTypes.string.isRequired,
+  })
+  ).isRequired,
+  };
 
 export default RadarComp;
