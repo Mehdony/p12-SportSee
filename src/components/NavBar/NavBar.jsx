@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './NavBar.module.css'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types';
 
 /**
  * Composant de barre de navigation.
@@ -32,14 +31,5 @@ const NavBar = () => {
   )
 }
 
-NavBar.propTypes = {
-    styles: PropTypes.shape({
-      navContainer: PropTypes.string.isRequired,
-      logo: PropTypes.string.isRequired,
-      navList: PropTypes.string.isRequired,
-      navItem: PropTypes.string.isRequired,
-      navLink: PropTypes.string.isRequired,
-    }).isRequired,
-  };
 
 export default NavBar
