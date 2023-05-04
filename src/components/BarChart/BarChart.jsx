@@ -110,7 +110,7 @@ export function BarChartComp(props) {
 
 BarChartComp.propTypes = {
   datas: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    name: PropTypes.number.isRequired,
     kilogrammes: PropTypes.number.isRequired,
     calories: PropTypes.number.isRequired,
   })).isRequired,
