@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import { store } from "../../config";
 import { useParams } from "react-router-dom";
 import styles from "./Home.module.css";
 import BarChartComp from "../../components/BarChart/BarChart";
@@ -8,58 +6,30 @@ import RadarComp from "../../components/RadarChart/RadarChart";
 import PieComp from "../../components/PieComp/PieComp";
 import Nutrients from "../../components/Nutrients/Nutrients";
 import Error from "../../components/Error/Error";
+import useHomeData from "../../Services/Hooks/useHomeData";
 
 const Home = () => {
   const { id } = useParams();
 
-  const [average, setAverage] = useState([]);
-  const [userDatas, setUserDatas] = useState([]);
-  const [userInfos, setUserInfos] = useState([]);
-  const [userScore, setUserScore] = useState([]);
-  const [userActivity, setUserActivity] = useState([]);
-  const [kind, setKind] = useState([]);
-  const [userPerformance, setUserPerformance] = useState([]);
-  const [wait, setWait] = useState([]);
+  const {
+    average,
+    userDatas,
+    userInfos,
+    userScore,
+    userActivity,
+    kind,
+    userPerformance,
+    wait,
+    error,
+  } = useHomeData(id);
 
-  useEffect(() => {
-    promiseAll();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-/**
-
-Fetches user data from store using Promises and displays it on the home page.
-@async
-@function
-@returns {JSX.Element} - The rendered home page with user data or an error message if no data is found.
-*/
-
-  const promiseAll = async () => {
-    setWait(true);
-    try {
-      const [userDatas, averageSession, userActivity, userPerformance] =
-        await Promise.all([
-          store.getUserId(id),
-          store.getUserAverageSession(id),
-          store.getUserActivity(id),
-          store.getUserPerformance(id),
-        ]);
-      setUserDatas(userDatas.nutType);
-      setUserInfos(userDatas.userInfos);
-      setUserScore(userDatas.todayScore);
-      setAverage(averageSession);
-      setUserActivity(userActivity);
-      setUserPerformance(userPerformance);
-      setKind(userPerformance.kind);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setWait(false);
-    }
-  };
   console.log(userPerformance);
   if (wait) {
     return <div>loading...</div>;
+  }
+
+  if (error) {
+    return <Error />;
   }
 
   return (
