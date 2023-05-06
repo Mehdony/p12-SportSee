@@ -16,7 +16,6 @@ A Radar Chart component that displays the data passed in through props.
 */
 
 const RadarComp = (props) => {
-  console.log("radar", props.datas);
   return (
     <div className={styles.chartContainer}>
 

@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import styles from "./BarChart.module.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 /**
  * Composant BarChart pour afficher un graphique en barres avec données de poids et calories brûlées.
@@ -20,9 +20,6 @@ import PropTypes from 'prop-types';
  */
 
 export function BarChartComp(props) {
-  
-  console.log(props)
-
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload) {
       return (
@@ -30,18 +27,18 @@ export function BarChartComp(props) {
           <p className={styles.weightLabel}>{payload[0].value}kg</p>
           <p className={styles.caloriesLabel}>{payload[1].value}Kcal</p>
         </div>
-      )
+      );
     }
-    return null
-  }
+    return null;
+  };
 
   // if widrh is less than 1300px mywidth == 100% otherwise 853px
-  const myWidth = window.innerWidth < 1300 ? '99%' : 853
+  const myWidth = window.innerWidth < 1300 ? "99%" : 853;
 
   const renderBarChart = (
     <div className={styles.chartContainer}>
       <div className={styles.barTitle}>Activité quotidienne</div>
-      <ResponsiveContainer width={'99%'} height={250}>
+      <ResponsiveContainer width={"99%"} height={250}>
         <BarChart width={myWidth} height={320} data={props.datas}>
           <CartesianGrid
             strokeDasharray="3 3"
@@ -68,7 +65,7 @@ export function BarChartComp(props) {
             domain={["dataMin - 100", "dataMax + 100"]}
             hide={true}
             yAxisId="calories"
-            />
+          />
           <YAxis
             tickLine={false}
             axisLine={false}
@@ -77,12 +74,11 @@ export function BarChartComp(props) {
             stroke="#9B9EAC"
             yAxisId="kilogrammes"
             domain={["dataMin - 2", "dataMax + 2"]}
-            
-            />
+          />
           <Tooltip
             content={<CustomTooltip />}
             animationEasing="ease-out"
-            wrapperStyle={{ outline: 'none', left: 30, top: -21 }}
+            wrapperStyle={{ outline: "none", left: 30, top: -21 }}
           />
           <Bar
             name="Poids (kg)"
@@ -103,18 +99,19 @@ export function BarChartComp(props) {
         </BarChart>
       </ResponsiveContainer>
     </div>
-  )
+  );
 
-  return <div>{renderBarChart}</div>
+  return <div>{renderBarChart}</div>;
 }
 
 BarChartComp.propTypes = {
-  datas: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.number.isRequired,
-    kilogrammes: PropTypes.number.isRequired,
-    calories: PropTypes.number.isRequired,
-  })).isRequired,
+  datas: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.number.isRequired,
+      kilogrammes: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
-
-export default BarChartComp
+export default BarChartComp;

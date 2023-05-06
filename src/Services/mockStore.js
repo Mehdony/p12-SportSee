@@ -19,7 +19,6 @@ const MockStore = {
   getUserId: async () => {
     // on crée une nouvelle instance de la classe UserModel avec les données de mock.json
     const userData = new UserDataModel(mockData.data);
-    console.log(userData)
     // on retourne une promesse qui contient les données de l'utilisateur
     return Promise.resolve(userData);
   },
@@ -28,7 +27,6 @@ const MockStore = {
   getUserActivity: async () => {
     // on crée une nouvelle instance de la classe ActivityModel avec les données de mock.json
     const activityData = new ActivityModel(mockData.activity);
-    console.log(activityData)
     // on retourne une promesse qui contient les données d'activités de l'utilisateur
     return Promise.resolve(activityData.mappedData);
   },

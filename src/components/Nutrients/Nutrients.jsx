@@ -14,7 +14,6 @@ A component for displaying nutrient information.
 */
 
 function Nutrients(props) {
-  console.log(props);
   return (
     <div className={styles.nutrientContainer}>
       <div className={`${styles.iconContainer} ${styles[props.value.styling]}`}>

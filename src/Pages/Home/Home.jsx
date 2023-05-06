@@ -23,7 +23,6 @@ const Home = () => {
     error,
   } = useHomeData(id);
 
-  console.log(userPerformance);
   if (wait) {
     return <div>loading...</div>;
   }

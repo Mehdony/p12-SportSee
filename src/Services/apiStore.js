@@ -19,7 +19,6 @@ const ApiStore = {
   getUserId: async (id) => {
     const { data } = await axios.get(baseUrl + id);
     const userData = new UserDataModel(data.data);
-    console.log(userData);
     return userData;
   },
 
@@ -34,7 +33,6 @@ const ApiStore = {
   getUserActivity: async (id) => {
     const { data } = await axios.get(baseUrl + id + "/activity");
     const activityData = new ActivityModel(data.data);
-    console.log(activityData);
     return activityData.mappedData;
   },
 
@@ -49,7 +47,6 @@ const ApiStore = {
   getUserAverageSession: async (id) => {
     const { data } = await axios.get(baseUrl + id + "/average-sessions");
     const averageData = new AverageModel(data.data);
-    console.log(averageData);
     return averageData.mappedData;
   },
 
@@ -64,7 +61,6 @@ const ApiStore = {
   getUserPerformance: async (id) => {
     const { data } = await axios.get(baseUrl + id + "/performance");
     const performanceData = new PerformanceModel(data.data);
-    console.log(performanceData);
     return performanceData.mappedData;
   },
 };
