@@ -6,7 +6,7 @@ const useHomeData = (id) => {
   const [average, setAverage] = useState([]);
   const [userDatas, setUserDatas] = useState([]);
   const [userInfos, setUserInfos] = useState([]);
-  const [userScore, setUserScore] = useState([]);
+  const [userScore, setUserScore] = useState();
   const [userActivity, setUserActivity] = useState([]);
   const [kind, setKind] = useState([]);
   const [userPerformance, setUserPerformance] = useState([]);
