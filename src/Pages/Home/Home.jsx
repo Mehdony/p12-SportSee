@@ -22,7 +22,7 @@ const Home = () => {
     wait,
     error,
   } = useHomeData(id);
-  console.log("render home");
+
   if (wait) {
     return <div>loading...</div>;
   }
