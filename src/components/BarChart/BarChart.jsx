@@ -20,6 +20,8 @@ import PropTypes from "prop-types";
  */
 
 export function BarChartComp(props) {
+
+  // creation d'un composant pour le tooltip du graphique
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload) {
       return (

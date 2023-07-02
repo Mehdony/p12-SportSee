@@ -23,6 +23,8 @@ const Home = () => {
     error,
   } = useHomeData(id);
 
+  // permet de gérer l'affichage des données en fonction de l'état de la requête
+
   if (wait) {
     return <div>loading...</div>;
   }
@@ -42,16 +44,21 @@ const Home = () => {
         </h3>
         <section className={styles.chartsContainerGroup}>
           <section className={styles.allCharts}>
+            {/* affichage du graphique des sessions sous forme de barChart */}
             {userActivity.length > 0 && <BarChartComp datas={userActivity} />}
             <div className={styles.chartsContainer}>
+              {/* affichage de la moyenne des sessions */}
               {average !== undefined && <AverageSession average={average} />}
+              {/* affichage du radar perfs */}
               {userPerformance.length > 0 && (
                 <RadarComp datas={userPerformance} kind={kind} />
               )}
+              {/* affichage du score */}
               {userScore !== undefined && <PieComp score={userScore} />}
             </div>
           </section>
           <section className={styles.nutrients}>
+            {/* affichage des nutriments */}
             {userDatas &&
               Object.entries(userDatas).map(([key, value], index) => (
                 <Nutrients key={index} name={key} value={value} index={index} />

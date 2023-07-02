@@ -16,9 +16,13 @@ const ApiStore = {
  * @returns {Promise<UserDataModel>} A promise containing a UserDataModel object representing the user data.
  */
 
+  // on crée une fonction asynchrone qui va récupérer les données de l'utilisateur
   getUserId: async (id) => {
+    // on fait une requête axios pour récupérer les données de l'utilisateur
     const { data } = await axios.get(baseUrl + id);
+    // on modélise les données récupérées
     const userData = new UserDataModel(data.data);
+    // on retourne les données modélisées
     return userData;
   },
 

@@ -13,6 +13,7 @@ A PieChart component that displays a score as a percentage.
 
 function PieComp(props) {
   const data = [
+    // création du restat de la valeur du score ex: 100 - 80 = 20
     {
       name: "score",
       fill: "#fff",
@@ -20,6 +21,7 @@ function PieComp(props) {
       pv: 10,
       full: 200,
     },
+    // création de la valeur du score ex: 80%
     {
       name: "score",
       fill: "#ff0101",
@@ -29,6 +31,7 @@ function PieComp(props) {
     },
   ];
 
+  // affichage du texte score
   const lengendText = () => {
     return (
       <div
@@ -46,6 +49,7 @@ function PieComp(props) {
     );
   };
 
+  // affichage du score
   const renderLabel = () => {
     return (
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">

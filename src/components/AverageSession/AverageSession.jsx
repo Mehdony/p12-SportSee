@@ -19,9 +19,10 @@ Composant qui affiche un graphique en ligne avec la durée moyenne des sessions.
 */
 
 const AverageSession = (props) => {
+
+  // creation d'un composant pour le point du graphique
   const CustomDot = (props) => {
     const { cx, cy } = props;
-
     return (
       <circle
         cx={cx}
@@ -34,6 +35,8 @@ const AverageSession = (props) => {
     );
   };
 
+
+// creation d'un composant pour le curseur du graphique
   const CustomCursor = (props) => {
     const { points } = props;
     const { x, y } = points[0];
@@ -52,6 +55,7 @@ const AverageSession = (props) => {
   const renderLineChart = (
     <div className={styles.chartContainer}>
       <p className={styles.averageTitle}>Durée moyenne des sessions</p>
+ 
       <LineChart
         width={258}
         height={263}
@@ -63,6 +67,7 @@ const AverageSession = (props) => {
           bottom: 5,
         }}
       >
+        {/* création du dégradé de la ligne  */}
         <defs>
           <linearGradient id="colorUv" x1="1" y1="1" x2="0" y2="0">
             <stop offset="10%" stopColor="#ffffff" stopOpacity={0.8} />
@@ -70,6 +75,7 @@ const AverageSession = (props) => {
             <stop offset="30%" stopColor="#ffffff" stopOpacity={0.8} />
           </linearGradient>
         </defs>
+        {/* grille désactivée */}
         <CartesianGrid horizontal={false} vertical={false} />
         <XAxis
           dataKey="name"
@@ -80,6 +86,7 @@ const AverageSession = (props) => {
           height={50}
           axisLine={false}
         />
+        {/* création du tooltip */}
         <Tooltip
           cursor={<CustomCursor />}
           stroke="black"
@@ -95,6 +102,7 @@ const AverageSession = (props) => {
           }}
           position="top"
         />
+        {/* création de la ligne et utilisation du dégradé dans stroke */}
         <Line
           dot={false}
           activeDot={<CustomDot />}
@@ -109,6 +117,7 @@ const AverageSession = (props) => {
   );
   return <div>{renderLineChart}</div>;
 };
+
 
 AverageSession.propTypes = {
   average: PropTypes.arrayOf(PropTypes.shape({

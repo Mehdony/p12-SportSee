@@ -10,16 +10,22 @@
 
 export default class UserDataModel {
   constructor(data) {
+    // récupéation de l'id de l'utilisateur
     this.userId = data.id;
+    // récupération des informations de l'utilisateur
     this.userInfos = data.userInfos;
+    // récupération du score de l'utilisateur
     if (data.score) {
       this.todayScore = data.score;
     } else if (data.todayScore) {
       this.todayScore = data.todayScore;
     }
+    // récupération des données clés de l'utilisateur ( nutriments non triés)
     this.keyData = data.keyData;
+    // récupération des données clés de l'utilisateur ( nutriments triés)
     this.nutType = this.cases([this.keyData.name].nutType);
   }
+
   cases() {
     return {
       calorieCount: {

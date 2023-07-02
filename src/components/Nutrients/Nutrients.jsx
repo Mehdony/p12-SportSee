@@ -17,13 +17,17 @@ function Nutrients(props) {
   return (
     <div className={styles.nutrientContainer}>
       <div className={`${styles.iconContainer} ${styles[props.value.styling]}`}>
+        {/* logo du nitriment */}
         <img src={`/assets/nutrients/${props.name}.svg`} alt="" />
       </div>
       <div className={styles.nutrientInfo}>
         <p className={styles.nutrientValue}>
+          {/* valeur du nutriments */}
           {props.value.count.toLocaleString('en-US')}
+          {/* unité du nutriment */}
           {props.value.unit}
         </p>
+        {/* nom du nutriment */}
         <p className={styles.nutrientName}>{props.value.nutType}</p>
       </div>
     </div>

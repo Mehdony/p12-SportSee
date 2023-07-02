@@ -3,7 +3,6 @@ import "./index.css";
 import App from "./App";
 
 /**
-
 Render the App component in the root element using React.StrictMode.
 @function
 @global
